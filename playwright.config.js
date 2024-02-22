@@ -3,7 +3,10 @@ const { devices } = require("@playwright/test");
 
 const config = {
   testDir: "./tests",
-  retries: 0,
+  retries: 0, // retries are used to determine that a test is flaky, if a test fails it will retry the test for the number of times specified
+  //workers: 1, // playwright uses a max of 5 workers when running parallel tests,
+  // by default when running all tests playwright will run them in parallel, but when running only one test.spec it runs sequentially
+  // setting workers to 1 will make it run sequentially when running all tests
 
   /* Maximum time one test can run for. */
   timeout: 30 * 1000,
