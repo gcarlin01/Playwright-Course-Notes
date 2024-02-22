@@ -15,6 +15,9 @@ const config = {
   },
 
   reporter: "html",
+  // for allure report script use command for example: npx playwright test --grep @Webs --reporter=line,allure-playwright
+  // once the tests run, use command: allure generate ./allure-results --clean
+  // then: allure open ./allure-report
   //  projects : [
   //   {
   //     name : 'safari',
